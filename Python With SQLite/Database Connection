@@ -1,0 +1,15 @@
+import sqlite3
+
+con = sqlite3.connect("Test.db")
+cur = con.cursor()
+
+cur.execute("CREATE TABLE IF NOT EXISTS TestDb (id INTEGER PRIMARY KEY,name TEXT,city TEXT )")
+cur.execute("INSERT INTO TestDb(name,city) VALUES ('ABC','bhavnagar')")
+cur.execute("INSERT INTO TestDb(name,city) VALUES ('XYZ','surat')")
+con.commit()
+
+print("Database Created Successfully")
+cur.close()
+con.close()
+
+
